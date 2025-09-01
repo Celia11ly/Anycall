@@ -44,6 +44,11 @@ build
 .eslintcache
 .stylelintcache
 
+# Node.js installation
+node-v18.17.1-darwin-x64
+node-v18.17.1-darwin-x64.tar.gz
+node-v18.17.1.pkg
+
 # Temporary files
 *.tmp
 *.temp
