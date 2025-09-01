@@ -16,6 +16,7 @@
    - **解决方案**：
      - 更新了`.gitignore`文件，添加了对Node.js安装文件的忽略
      - 从git仓库中移除了这些文件：`git rm -r --cached node-v18.17.1-darwin-x64 node-v18.17.1-darwin-x64.tar.gz node-v18.17.1.pkg`
+     - 完全从工作目录中删除了这些文件：`rm -rf node-v18.17.1-darwin-x64 node-v18.17.1-darwin-x64.tar.gz node-v18.17.1.pkg`
      - 重新构建并部署了应用
 
 现在GitHub Pages应该能够正常构建和部署您的应用。
@@ -37,66 +38,36 @@
 ## 本地测试方法
 您可以通过以下步骤在本地测试构建后的应用：
 
-1. 设置Node.js路径（临时解决方案）：
-   ```bash
-   export PATH=$PATH:/Users/Celia/Downloads/anycall/node-v18.17.1-darwin-x64/bin
-   ```
-
-2. 构建项目：
+1. 构建项目：
    ```bash
    npm run build
    ```
 
-3. 启动预览服务器：
+2. 启动预览服务器：
    ```bash
    npm run preview
    ```
 
-4. 在浏览器中访问：http://localhost:4173/Anycall/
+3. 在浏览器中访问：http://localhost:4173/Anycall/
 
 ## 重新部署方法
 如果您需要更新应用并重新部署，可以按照以下步骤操作：
 
-1. 设置Node.js路径（临时解决方案）：
-   ```bash
-   export PATH=$PATH:/Users/Celia/Downloads/anycall/node-v18.17.1-darwin-x64/bin
-   ```
-
-2. 构建项目：
+1. 构建项目：
    ```bash
    npm run build
    ```
 
-3. 部署到GitHub Pages：
+2. 部署到GitHub Pages：
    ```bash
    npm run deploy
    ```
 
-4. 等待几分钟让更改生效，然后访问：https://celia11ly.github.io/Anycall/
+3. 等待几分钟让更改生效，然后访问：https://celia11ly.github.io/Anycall/
 
 ## 解决'command not found: npm'错误
 
-### 临时解决方案
-每次打开新终端时，运行以下命令设置Node.js路径：
-```bash
-export PATH=$PATH:/Users/Celia/Downloads/anycall/node-v18.17.1-darwin-x64/bin
-```
-
-### 永久解决方案
-将Node.js路径添加到您的shell配置文件中（推荐）：
-
-1. 打开shell配置文件：
-   ```bash
-   open -e ~/.zshrc
-   ```
-
-2. 在文件末尾添加以下行：
-   ```bash
-   # Add Node.js to PATH
-   export PATH=$PATH:/Users/Celia/Downloads/anycall/node-v18.17.1-darwin-x64/bin
-   ```
-
-3. 保存文件并关闭编辑器
+由于我们已经完全移除了项目中的Node.js安装文件，建议您在系统上安装Node.js以正常运行npm命令。您可以从Node.js官网下载并安装最新版本。
 
 4. 应用更改：
    ```bash
